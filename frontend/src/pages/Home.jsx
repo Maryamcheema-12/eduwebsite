@@ -119,78 +119,7 @@ const Home = () => {
   };
   return (
     <div className="bg-white text-slate-900 selection:bg-amber-100 overflow-x-hidden">     
-      {/* --- POSTER CAROUSEL SECTION (Compact) --- */}
-      <section className="py-4 md:py-12 lg:py-20 bg-slate-50 border-t border-slate-200">
-        <div className="container mx-auto px-2 md:px-4 lg:px-8">
-          <div className="relative">
-            <div className="overflow-hidden rounded-xl shadow-2xl border border-slate-200">
-              <motion.div 
-                animate={{ x: `-${currentSlide * 100}%` }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-                className="flex"
-              >
-                {POSTER_CAROUSEL.map((poster, idx) => (
-                  <motion.div 
-                    key={idx} 
-                    className="w-full flex-shrink-0"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: idx * 0.1 }}
-                  >
-                    <div className="relative w-full aspect-[1080/566] overflow-hidden rounded-2xl shadow-2xl border border-slate-200">
-                      <img 
-                        src={poster.image} 
-                        alt={poster.title}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-2 md:p-6 flex flex-col justify-end">
-                        <motion.div className="max-w-md" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-                          <h4 className="text-lg md:text-2xl lg:text-3xl font-bold text-white mb-1 md:mb-2 tracking-tight leading-tight">{poster.title}</h4>
-                          <p className="text-xs md:text-base lg:text-lg text-amber-100 font-semibold tracking-wide leading-relaxed">{poster.subtitle}</p>
-                        </motion.div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
-            {/* Carousel Controls (Compact) */}
-            <div className="flex justify-between items-center mt-4 md:mt-8 gap-2">
-              <div className="flex gap-1 md:gap-2">
-                {POSTER_CAROUSEL.map((_, idx) => (
-                  <motion.button
-                    key={idx}
-                    onClick={() => setCurrentSlide(idx)}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`rounded-full transition-all duration-500 ${
-                      currentSlide === idx ? "bg-amber-600 w-6 md:w-10 h-2 md:h-3 shadow-lg shadow-amber-600/50" : "bg-slate-300 w-2 md:w-3 h-2 md:h-3 hover:bg-slate-400"
-                    }`}
-                  />
-                ))}
-              </div>
-              <div className="flex gap-1 md:gap-2">
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setCurrentSlide((prev) => (prev - 1 + POSTER_CAROUSEL.length) % POSTER_CAROUSEL.length)}
-                  className="p-1 md:p-2 bg-slate-900 text-white rounded-full hover:bg-amber-600 transition-all shadow-lg"
-                >
-                  <ArrowRight className="w-4 md:w-5 h-4 md:h-5 rotate-180" />
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setCurrentSlide((prev) => (prev + 1) % POSTER_CAROUSEL.length)}
-                  className="p-1 md:p-2 bg-slate-900 text-white rounded-full hover:bg-amber-600 transition-all shadow-lg"
-                >
-                  <ArrowRight className="w-4 md:w-5 h-4 md:h-5" />
-                </motion.button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
       {/* --- HERO SECTION --- */}
       <section 
         onMouseMove={handleMouseMove} 
@@ -363,8 +292,78 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      
+      {/* --- POSTER CAROUSEL SECTION (Compact) --- */}
+      <section className="py-4 md:py-12 lg:py-20 bg-slate-50 border-t border-slate-200">
+        <div className="container mx-auto px-2 md:px-4 lg:px-8">
+          <div className="relative">
+            <div className="overflow-hidden rounded-xl shadow-2xl border border-slate-200">
+              <motion.div 
+                animate={{ x: `-${currentSlide * 100}%` }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+                className="flex"
+              >
+                {POSTER_CAROUSEL.map((poster, idx) => (
+                  <motion.div 
+                    key={idx} 
+                    className="w-full flex-shrink-0"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: idx * 0.1 }}
+                  >
+                    <div className="relative w-full aspect-[1080/566] overflow-hidden rounded-2xl shadow-2xl border border-slate-200">
+                      <img 
+                        src={poster.image} 
+                        alt={poster.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-2 md:p-6 flex flex-col justify-end">
+                        <motion.div className="max-w-md" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+                          <h4 className="text-lg md:text-2xl lg:text-3xl font-bold text-white mb-1 md:mb-2 tracking-tight leading-tight">{poster.title}</h4>
+                          <p className="text-xs md:text-base lg:text-lg text-amber-100 font-semibold tracking-wide leading-relaxed">{poster.subtitle}</p>
+                        </motion.div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+            {/* Carousel Controls (Compact) */}
+            <div className="flex justify-between items-center mt-4 md:mt-8 gap-2">
+              <div className="flex gap-1 md:gap-2">
+                {POSTER_CAROUSEL.map((_, idx) => (
+                  <motion.button
+                    key={idx}
+                    onClick={() => setCurrentSlide(idx)}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className={`rounded-full transition-all duration-500 ${
+                      currentSlide === idx ? "bg-amber-600 w-6 md:w-10 h-2 md:h-3 shadow-lg shadow-amber-600/50" : "bg-slate-300 w-2 md:w-3 h-2 md:h-3 hover:bg-slate-400"
+                    }`}
+                  />
+                ))}
+              </div>
+              <div className="flex gap-1 md:gap-2">
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setCurrentSlide((prev) => (prev - 1 + POSTER_CAROUSEL.length) % POSTER_CAROUSEL.length)}
+                  className="p-1 md:p-2 bg-slate-900 text-white rounded-full hover:bg-amber-600 transition-all shadow-lg"
+                >
+                  <ArrowRight className="w-4 md:w-5 h-4 md:h-5 rotate-180" />
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setCurrentSlide((prev) => (prev + 1) % POSTER_CAROUSEL.length)}
+                  className="p-1 md:p-2 bg-slate-900 text-white rounded-full hover:bg-amber-600 transition-all shadow-lg"
+                >
+                  <ArrowRight className="w-4 md:w-5 h-4 md:h-5" />
+                </motion.button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>      
       {/* --- ABOUT US SECTION --- */}
       <section className="py-6 md:py-16 lg:py-40 bg-slate-50 overflow-hidden relative border-t border-slate-200">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-12">
