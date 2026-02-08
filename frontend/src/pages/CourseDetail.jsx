@@ -28,7 +28,7 @@ const COURSES_DATA = {
     description: "Expert-led training specifically for Mechanical Engineers. Focuses on HVAC, Fire Protection, and Plumbing systems as per the latest MME exam patterns in Doha.",
     duration: "30 Hours",
     price: "1200",
-    image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80",
+    image: "template3.png",
     syllabus: [
       { step: "01", title: "HVAC Systems", desc: "Cooling loads, psychrometry and Kahramaa standards." },
       { step: "02", title: "Fire & Plumbing", desc: "QCDD regulations and water distribution networks." },
@@ -41,7 +41,7 @@ const COURSES_DATA = {
     title: "UPDA Electrical Engineering",
     category: "UPDA Qatar",
     description: "Comprehensive module for Electrical Engineers focusing on Kahramaa regulations, power distribution, and protection systems required for Qatar licensure.",
-    duration: "30 Hours",
+    
     price: "1200",
     image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80",
     syllabus: [
@@ -143,10 +143,7 @@ const CourseDetail = () => {
                 <div className="flex items-center gap-3 group">
                   <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center border border-white/20 group-hover:bg-amber-600 group-hover:border-amber-600 transition-all">
                     <Clock className="w-5 h-5 text-amber-400 group-hover:text-white" />
-                  </div>
-                  <div className="flex flex-col text-left">                   
-                    <span className="text-white font-bold text-lg uppercase tracking-tight">{course.duration}</span>
-                  </div>
+                  </div>                  
                 </div>
                 <div className="h-8 w-[1px] bg-white/10 hidden sm:block" />
                 <div className="flex items-center gap-3 group">

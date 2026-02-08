@@ -121,9 +121,9 @@ const Home = () => {
     <div className="bg-white text-slate-900 selection:bg-amber-100 overflow-x-hidden">
       {/* --- PROFESSIONAL HERO POSTER SECTION --- */}
       <section className="py-0 bg-white">
-        <div className="relative h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden rounded-none">
+        <div className="relative h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-2xl shadow-2xl border border-slate-200">
           <img 
-            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1920&q=80"
+            src="hero.png"
             alt="Professional training"
             className="w-full h-full object-cover"
           />
@@ -167,7 +167,7 @@ const Home = () => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: idx * 0.1 }}
                   >
-                    <div className="relative h-40 md:h-64 lg:h-[800px] w-full overflow-hidden">
+                    <div className="relative w-full aspect-[1080/566] overflow-hidden rounded-2xl shadow-2xl border border-slate-200">
                       <img 
                         src={poster.image} 
                         alt={poster.title}

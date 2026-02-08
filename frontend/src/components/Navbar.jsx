@@ -18,6 +18,7 @@ const COURSE_CATEGORIES = {
     { name: "Primavera P6", id: "primavera-p6" }
   ]
 };
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -25,6 +26,7 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const location = useLocation();
   const navigate = useNavigate();
+
   // Handle window resize for responsive behavior
   useEffect(() => {
     const handleResize = () => {
@@ -33,6 +35,7 @@ const Navbar = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
   // Handle scroll effect for glass-morphism transition
   useEffect(() => {
     const handleScroll = () => {
@@ -54,8 +57,10 @@ const Navbar = () => {
     { name: "Project Management", category: "PROJECT_MANAGEMENT" },
     { name: "Enrollment", path: "/register" },
   ];
+
   const isActive = (path) => location.pathname === path;
   const isHomePage = location.pathname === "/";
+
   const handleCourseClick = (courseId) => {
     navigate(`/course/${courseId}`);
     setOpenDropdown(null);
@@ -69,9 +74,9 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isHomePage
           ? scrolled
-            ? "bg-white/90 backdrop-blur-xl border-b border-slate-200 py-2 sm:py-3 shadow-lg"
-            : "bg-gradient-to-b from-black/40 to-transparent py-4 sm:py-6 backdrop-blur-sm"
-          : "bg-white/95 backdrop-blur-xl border-b border-slate-200 py-2 sm:py-3 shadow-lg"
+            ? "bg-white/90  border-b border-slate-200 py-2 sm:py-3 shadow-lg"
+            : "bg-gradient-to-b from-black/40 to-transparent py-4 sm:py-6"
+          : "bg-white/95  border-b border-slate-200 py-2 sm:py-3 shadow-lg"
       }`}
     >
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-12">
@@ -82,7 +87,7 @@ const Navbar = () => {
             <div className="relative">
               <div className={`${
                 isHomePage
-                  ? scrolled ? 'bg-slate-900' : 'bg-white/20 backdrop-blur-sm'
+                  ? scrolled ? 'bg-slate-900' : 'bg-white/20 '
                   : 'bg-slate-100'
               } p-2 sm:p-2.5 rounded-lg sm:rounded-xl group-hover:bg-amber-600 transition-all duration-500 shadow-lg`}>
                 <GraduationCap className={`${

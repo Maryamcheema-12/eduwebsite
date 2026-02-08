@@ -42,7 +42,6 @@ const COURSES_DATA = [
     title: "PMP Certification Training",
     category: "PROJECT_MANAGEMENT",
     description: "Authorized PMP training providing the 35 Contact Hours required for the PMP exam. Master the PMBOK 7th Edition processes and Agile methodologies used by global leaders.",
-    duration: "35 Hours",
     price: "1500",
     image: "pms-template.png",
     syllabus: [
@@ -58,7 +57,7 @@ const COURSES_DATA = [
     title: "QCDD Mechanical Exam",
     category: "QCDD",
     description: "Specialized coaching for mechanical engineers seeking Fire Safety certification from the Qatar Civil Defense Department. Covers all NFPA standards and QCDD amendments.",
-    duration: "30 Hours",
+   
     price: "1200",
     image: "QCDD-mechanical.png",
     syllabus: [
@@ -251,7 +250,7 @@ const Courses = () => {
                             <span className="text-[7px] sm:text-[8px] md:text-xs font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] text-amber-700 bg-amber-100 px-3 sm:px-3.5 md:px-4 py-1.5 sm:py-2 rounded-md">Official Prep</span>
                             <span className="text-[7px] sm:text-[8px] md:text-xs font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] text-slate-600 bg-slate-150 px-3 sm:px-3.5 md:px-4 py-1.5 sm:py-2 rounded-md">Engr. Ref: 2026</span>
                           </div>
-                          <div className="flex items-center gap-2.5 sm:gap-3 text-xs sm:text-sm md:text-base font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] text-slate-900 group-hover:text-amber-600 transition-colors whitespace-nowrap">
+                          <div className="flex items-center gap-2.5 sm:Sgap-3 text-xs sm:text-sm md:text-base font-black uppercase tracking-[0.15em] sm:tracking-[0.2em] text-slate-900 group-hover:text-amber-600 transition-colors whitespace-nowrap">
                             Initialize <ChevronRight size={14} className="sm:w-[16px] sm:h-[16px] md:w-[18px] md:h-[18px] group-hover:translate-x-1.5 transition-transform" />
                           </div>
                         </div>
