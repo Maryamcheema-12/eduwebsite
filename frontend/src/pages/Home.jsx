@@ -118,37 +118,7 @@ const Home = () => {
     y.set(0);
   };
   return (
-    <div className="bg-white text-slate-900 selection:bg-amber-100 overflow-x-hidden">
-      {/* --- PROFESSIONAL HERO POSTER SECTION --- */}
-      <section className="py-0 bg-white">
-        <div className="relative h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-2xl shadow-2xl border border-slate-200">
-          <img 
-            src="hero.png"
-            alt="Professional training"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/60 to-transparent" />
-          <div className="absolute inset-0 flex items-center justify-start">
-            <div className="container mx-auto px-4 md:px-6 lg:px-12">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-                viewport={{ once: true }}
-                className="max-w-xl"
-              >
-                <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
-                  Professional Training Excellence
-                </h2>
-                <p className="text-xl md:text-2xl text-amber-100 mb-8 font-semibold">
-                  Industry-leading courses designed for career advancement
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+    <div className="bg-white text-slate-900 selection:bg-amber-100 overflow-x-hidden">     
       {/* --- POSTER CAROUSEL SECTION (Compact) --- */}
       <section className="py-4 md:py-12 lg:py-20 bg-slate-50 border-t border-slate-200">
         <div className="container mx-auto px-2 md:px-4 lg:px-8">
