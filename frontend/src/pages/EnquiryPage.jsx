@@ -6,15 +6,12 @@ import {
   ArrowLeft, Mail, MessageCircle, User, Calendar, Mail as MailIcon, 
   Phone, BookOpen, AlertCircle, Zap, CheckCircle
 } from "lucide-react";
-
 // Initialize EmailJS
 emailjs.init("Adhk2_-6F_9Gg16VO");
-
 const EnquiryPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const courseName = location.state?.courseName || "";
-
   const [formData, setFormData] = useState({
     name: "",
     age: "",
@@ -117,7 +114,7 @@ Please provide me with more information about the course.`;
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white pt-20 md:pt-24">
       {/* Header */}
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
@@ -140,8 +137,8 @@ Please provide me with more information about the course.`;
       </motion.div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 md:px-12 py-12 md:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 md:gap-16 lg:gap-20">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12 py-4 md:py-10 lg:py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 md:gap-16 lg:gap-20 items-start">
           {/* Left Content Section */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -159,9 +156,9 @@ Please provide me with more information about the course.`;
                 </p>
               </div>
 
-              <div className="space-y-6 pt-8 border-t border-slate-200">
+              <div className="space-y-8 pt-12 border-t border-slate-200">
                 <div className="flex items-start gap-5">
-                  <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
                     <MessageCircle className="w-6 h-6 text-amber-600" />
                   </div>
                   <div>
@@ -170,8 +167,8 @@ Please provide me with more information about the course.`;
                   </div>
                 </div>
                 <div className="flex items-start gap-5">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-                    <Mail className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <Mail className="w-6 h-6 text-amber-600" />
                   </div>
                   <div>
                     <h3 className="font-black text-slate-900 uppercase tracking-tight mb-1">Email Support</h3>
@@ -179,8 +176,8 @@ Please provide me with more information about the course.`;
                   </div>
                 </div>
                 <div className="flex items-start gap-5">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-                    <CheckCircle className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <CheckCircle className="w-6 h-6 text-amber-600" />
                   </div>
                   <div>
                     <h3 className="font-black text-slate-900 uppercase tracking-tight mb-1">Quick Response</h3>

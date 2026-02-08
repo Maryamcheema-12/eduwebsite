@@ -95,48 +95,44 @@ const Gallery = () => {
 
   const filteredGallery = activeFilter === "ALL" ? GALLERY_DATA : GALLERY_DATA.filter(i => i.category === activeFilter);
 
-  useEffect(() => { window.scrollTo(0, 0); }, []);
-
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden selection:bg-amber-100">
-      
+    <div className="min-h-screen bg-white overflow-x-hidden selection:bg-amber-100 pt-20 md:pt-24">
       {/* --- HERO HEADER --- */}
       <section ref={heroRef} onMouseMove={(e) => {
         const rect = heroRef.current.getBoundingClientRect();
         mX.set((e.clientX - rect.left) / rect.width - 0.5);
         mY.set((e.clientY - rect.top) / rect.height - 0.5);
-      }} className="relative pt-56 pb-40 bg-slate-50 border-b border-slate-100 overflow-hidden perspective-2000">
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[size:50px_50px] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)]" />
-        <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <motion.div style={{ y: heroY }}>
-              <div className="flex items-center gap-4 mb-10">
-                <span className="w-16 h-[2px] bg-amber-600"></span>
-                <span className="text-[10px] font-black uppercase tracking-[0.5em] text-amber-600 italic">Academy Visual Archive</span>
+      }} className="relative py-4 md:py-10 lg:py-32 bg-white border-b border-slate-200 overflow-hidden perspective-2000">
+        <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[size:50px_50px] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)]" />
+        <div className="container mx-auto px-4 md:px-6 lg:px-12 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 md:gap-20 lg:gap-24 items-center">
+            <motion.div>
+              <div className="flex items-center gap-4 mb-8 md:mb-12">
+                <span className="w-12 md:w-16 h-1 md:h-[2px] bg-amber-600"></span>
+                <span className="text-xs md:text-sm font-black uppercase tracking-widest text-amber-600">Academy Visual Archive</span>
               </div>
-              <h1 className="text-6xl md:text-[9rem] font-black tracking-tighter text-slate-950 mb-10 uppercase leading-[0.8]">Academy <br /><span className="text-amber-600">Vision.</span></h1>
-              <p className="text-2xl text-slate-500 font-medium leading-relaxed max-w-xl">Exploring the technical landscape of Doha's premier engineering institute through high-fidelity visual documentation.</p>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-slate-950 mb-8 md:mb-12 uppercase leading-tight">Academy <br /><span className="text-amber-600">Vision.</span></h1>
+              <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-xl">Exploring the technical landscape of Doha's premier engineering institute through high-fidelity visual documentation.</p>
             </motion.div>
             <div className="hidden lg:flex justify-end">
-                <motion.div style={{ rotateX: hRotateX, rotateY: hRotateY, transformStyle: "preserve-3d" }} className="relative w-96 h-96 bg-white rounded-[5rem] shadow-3xl border border-slate-100 flex items-center justify-center">
-                    <div style={{ transform: "translateZ(100px)" }} className="flex flex-col items-center gap-6">
-                        <div className="p-8 bg-slate-950 rounded-[2.5rem] shadow-2xl"><Aperture size={80} strokeWidth={1} className="text-amber-500 animate-spin-slow" /></div>
-                        <span className="text-[11px] font-black uppercase tracking-[0.6em] text-slate-400">ISO: Excellence</span>
-                    </div>
-                    <div className="absolute inset-6 border border-dashed border-slate-200 rounded-[4rem] animate-pulse" />
-                </motion.div>
+              <div className="relative h-[420px] w-[320px] rounded-2xl overflow-hidden shadow-xl border border-slate-200">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80" alt="Gallery Poster" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-6 flex flex-col justify-end">
+                  <h4 className="text-2xl font-bold text-white mb-2 tracking-tight leading-tight">Professional Training</h4>
+                  <p className="text-lg text-amber-100 font-semibold tracking-wide leading-relaxed">High-Fidelity Media</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* --- FACILITY TOUR SECTION (VIDEO) --- */}
-      <section className="py-32 bg-white">
+      <section className="py-4 md:py-10 lg:py-32 bg-white border-t border-slate-200">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="relative group overflow-hidden rounded-[4rem] shadow-[0_50px_100px_-20px_rgba(15,23,42,0.15)] bg-slate-900 aspect-video lg:aspect-[21/9] flex items-center justify-center">
             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 transition-transform duration-[3s]" alt="Facility Preview" />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-transparent to-slate-950 opacity-60" />
-            
             <div className="relative z-10 text-center">
               <motion.button 
                 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
@@ -155,18 +151,18 @@ const Gallery = () => {
       </section>
 
       {/* --- GRID FILTER --- */}
-      <div className="sticky top-[80px] z-40 bg-white/80 backdrop-blur-2xl border-b border-slate-100 py-10">
-        <div className="container mx-auto px-6 flex flex-wrap items-center justify-between gap-8">
-          <div className="flex flex-wrap gap-4">
-            {["ALL", "FACILITIES", "CLASSROOM", "WORKSHOP", "SUCCESS"].map((cat) => (
-              <button key={cat} onClick={() => setActiveFilter(cat)} className={`px-10 py-4 text-[10px] font-black uppercase tracking-[0.3em] transition-all rounded-full border-2 ${activeFilter === cat ? "bg-slate-950 text-white border-slate-950 shadow-2xl scale-105" : "bg-transparent text-slate-400 border-slate-100 hover:border-slate-950 hover:text-slate-950"}`}>{cat}</button>
-            ))}
-          </div>
+      <div className="sticky top-[80px] z-40 bg-white/80 backdrop-blur-2xl border-b border-slate-200 py-6 md:py-8">
+        <div className="container mx-auto px-4 md:px-6 lg:px-12 flex flex-wrap items-center justify-start gap-3 md:gap-4">
+          {[
+            "ALL", "FACILITIES", "CLASSROOM", "WORKSHOP", "SUCCESS"
+          ].map((cat) => (
+            <button key={cat} onClick={() => setActiveFilter(cat)} className={`px-6 md:px-8 py-2.5 md:py-3 text-xs md:text-sm font-black uppercase tracking-widest transition-all rounded-lg border-2 ${activeFilter === cat ? "bg-slate-950 text-white border-slate-950 shadow-lg" : "bg-transparent text-slate-400 border-slate-200 hover:border-slate-950 hover:text-slate-950"}`}>{cat}</button>
+          ))}
         </div>
       </div>
 
       {/* --- MASONRY GRID --- */}
-      <section className="py-32 bg-white">
+      <section className="py-4 md:py-10 lg:py-32 bg-white border-t border-slate-200">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
             <AnimatePresence mode="popLayout">
@@ -207,7 +203,7 @@ const Gallery = () => {
       </AnimatePresence>
 
       {/* --- FOOTER CTA --- */}
-      <section className="py-40 bg-white px-6">
+      <section className="py-4 md:py-10 lg:py-32 bg-white border-t border-slate-200 px-4 md:px-6">
         <div className="container mx-auto max-w-7xl bg-slate-950 rounded-[6rem] p-20 md:p-40 text-center relative overflow-hidden group shadow-3xl">
           <div className="absolute top-0 right-0 w-[50rem] h-[50rem] bg-amber-600/10 rounded-full blur-[150px] group-hover:bg-amber-600/20 transition-all" />
           <Camera className="w-32 h-32 text-amber-500 mx-auto mb-16 opacity-30" strokeWidth={0.5} />

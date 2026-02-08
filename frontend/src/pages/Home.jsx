@@ -18,7 +18,7 @@ const COURSES_DATA = [
     title: "PMP Certification Training",
     category: "Project Management",
     description: "Authorized PMP training providing the 35 Contact Hours required for the PMP exam. Master the PMBOK 7th Edition processes and Agile methodologies.",
-    duration: "35 Hours",
+    
     price: "1500",
     image: "pms-template.png",
     syllabus: [
@@ -34,7 +34,7 @@ const COURSES_DATA = [
     title: "QCDD Mechanical Exam",
     category: "QCDD Qatar",
     description: "Specialized coaching for mechanical engineers seeking Fire Safety certification from the Qatar Civil Defense Department.",
-    duration: "30 Hours",
+    
     price: "1200",
     image: "QCDD-mechanical.png",
     syllabus: [
@@ -50,7 +50,7 @@ const COURSES_DATA = [
     title: "UPDA Electrical Engineering",
     category: "UPDA Qatar",
     description: "Comprehensive module for Electrical Engineers focusing on Kahramaa regulations, power distribution, and protection systems required for Qatar licensure.",
-    duration: "30 Hours",
+    
     price: "1200",
     image: "QCDD-electrical.png",
     syllabus: [
@@ -65,12 +65,12 @@ const COURSES_DATA = [
 ];
 
 const POSTER_CAROUSEL = [
-  { id: 1, image: "template1.png", title: "PMP Certification", subtitle: "Master Project Management" },
-  { id: 2, image: "QCDD-mechanical.png", title: "QCDD Mechanical", subtitle: "Fire Safety Certification" },
-  { id: 3, image: "template2.png", title: "QCDD Electrical", subtitle: "Safety Excellence" },
-  { id: 4, image: "template3.png", title: "UPDA Mechanical", subtitle: "Professional Licensing" },
-  { id: 5, image: "pms-template.png", title: "UPDA Engineering", subtitle: "Professional Licensing" },
-  { id: 6, image: "pms-template.png", title: "UPDA Engineering", subtitle: "Professional Licensing" }
+  { id: 1, image: "Template1.png", title: "PMP Certification", subtitle: "Get Certificate in Project Management Excellence" },
+  { id: 2, image: "qcddelectrical-template.png", title: "QCDD Electrical", subtitle: "Professional QCDD electrical training Certification" },
+  { id: 3, image: "Template3.png", title: "UPDA Civil Engineering", subtitle: "Professioal UPDA civil engineering training Certification" },
+  { id: 4, image: "Template4.png", title: "QCDD Mechanical", subtitle: "Professional QCDD mechanical training Certification" },
+  { id: 5, image: "Template5.png", title: "Primavera-p6 Certication", subtitle: "Get Certificate in Master Project Primavera-p6 Excellence" },
+  { id: 6, image: "Template6.png", title: "Upda Mechanical ", subtitle: "Professional UPDA mechanical training Certification" }
 ];
 
 const OTHER_PROGRAMS = [
@@ -117,42 +117,43 @@ const Home = () => {
     x.set(0);
     y.set(0);
   };
-
-  const FloatingTemplates = () => (
-    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none perspective-[1200px]">
-      <motion.div 
-        style={{ rotateY: "-10deg", rotateX: "5deg" }}
-        animate={{ y: [-20, 20, -20], scale: [1, 1.05, 1] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[15%] -left-[5%] w-[250px] md:w-[450px] opacity-[0.15] md:opacity-[0.08] hidden md:block"
-      >
-        <div className="w-full h-48 md:h-64 bg-slate-800 rounded-[2rem] md:rounded-[3rem] border border-slate-700 shadow-2xl overflow-hidden">
-             <img src="https://images.unsplash.com/photo-1503387762-592dea58ef21?q=80&w=1000" className="w-full h-full object-cover grayscale" alt="design" />
-        </div>
-      </motion.div>
-
-      <motion.div 
-        style={{ rotateY: "10deg", rotateX: "-5deg" }}
-        animate={{ y: [30, -30, 30], scale: [1, 1.08, 1] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-[10%] -right-[5%] w-[280px] md:w-[500px] opacity-[0.15] md:opacity-[0.06] hidden md:block"
-      >
-        <div className="w-full h-48 md:h-64 bg-slate-800 rounded-[2rem] md:rounded-[3rem] border border-slate-700 shadow-2xl overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000" className="w-full h-full object-cover grayscale" alt="design" />
-        </div>
-      </motion.div>
-
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-    </div>
-  );
-
   return (
     <div className="bg-white text-slate-900 selection:bg-amber-100 overflow-x-hidden">
-       {/* --- POSTER CAROUSEL SECTION --- */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-white to-amber-50">
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-12">
+      {/* --- PROFESSIONAL HERO POSTER SECTION --- */}
+      <section className="py-0 bg-white">
+        <div className="relative h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden rounded-none">
+          <img 
+            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1920&q=80"
+            alt="Professional training"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/60 to-transparent" />
+          <div className="absolute inset-0 flex items-center justify-start">
+            <div className="container mx-auto px-4 md:px-6 lg:px-12">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                viewport={{ once: true }}
+                className="max-w-xl"
+              >
+                <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
+                  Professional Training Excellence
+                </h2>
+                <p className="text-xl md:text-2xl text-amber-100 mb-8 font-semibold">
+                  Industry-leading courses designed for career advancement
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- POSTER CAROUSEL SECTION (Compact) --- */}
+      <section className="py-4 md:py-12 lg:py-20 bg-slate-50 border-t border-slate-200">
+        <div className="container mx-auto px-2 md:px-4 lg:px-8">
           <div className="relative">
-            <div className="overflow-hidden rounded-xl sm:rounded-2xl md:rounded-3xl lg:rounded-[3rem] shadow-2xl border border-slate-200">
+            <div className="overflow-hidden rounded-xl shadow-2xl border border-slate-200">
               <motion.div 
                 animate={{ x: `-${currentSlide * 100}%` }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
@@ -166,16 +167,16 @@ const Home = () => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: idx * 0.1 }}
                   >
-                    <div className="relative h-48 sm:h-56 md:h-80 lg:h-[500px] xl:h-[600px] w-full overflow-hidden">
+                    <div className="relative h-40 md:h-64 lg:h-[800px] w-full overflow-hidden">
                       <img 
                         src={poster.image} 
                         alt={poster.title}
                         className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-end">
-                        <motion.div className="max-w-lg" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-                          <h4 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-1.5 md:mb-2 lg:mb-3 tracking-tight leading-[1.2] md:leading-[1.15]">{poster.title}</h4>
-                          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-amber-100 font-semibold tracking-wide leading-relaxed">{poster.subtitle}</p>
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent p-2 md:p-6 flex flex-col justify-end">
+                        <motion.div className="max-w-md" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
+                          <h4 className="text-lg md:text-2xl lg:text-3xl font-bold text-white mb-1 md:mb-2 tracking-tight leading-tight">{poster.title}</h4>
+                          <p className="text-xs md:text-base lg:text-lg text-amber-100 font-semibold tracking-wide leading-relaxed">{poster.subtitle}</p>
                         </motion.div>
                       </div>
                     </div>
@@ -183,10 +184,9 @@ const Home = () => {
                 ))}
               </motion.div>
             </div>
-
-            {/* Carousel Controls */}
-            <div className="flex justify-between items-center mt-6 sm:mt-8 md:mt-12 lg:mt-16 gap-4">
-              <div className="flex gap-2 md:gap-3">
+            {/* Carousel Controls (Compact) */}
+            <div className="flex justify-between items-center mt-4 md:mt-8 gap-2">
+              <div className="flex gap-1 md:gap-2">
                 {POSTER_CAROUSEL.map((_, idx) => (
                   <motion.button
                     key={idx}
@@ -194,17 +194,17 @@ const Home = () => {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     className={`rounded-full transition-all duration-500 ${
-                      currentSlide === idx ? "bg-amber-600 w-8 md:w-12 lg:w-14 h-2.5 md:h-3.5 shadow-lg shadow-amber-600/50" : "bg-slate-300 w-2.5 md:w-3.5 h-2.5 md:h-3 hover:bg-slate-400"
+                      currentSlide === idx ? "bg-amber-600 w-6 md:w-10 h-2 md:h-3 shadow-lg shadow-amber-600/50" : "bg-slate-300 w-2 md:w-3 h-2 md:h-3 hover:bg-slate-400"
                     }`}
                   />
                 ))}
               </div>
-              <div className="flex gap-2 md:gap-3">
+              <div className="flex gap-1 md:gap-2">
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setCurrentSlide((prev) => (prev - 1 + POSTER_CAROUSEL.length) % POSTER_CAROUSEL.length)}
-                  className="p-2 md:p-3 bg-slate-900 text-white rounded-full hover:bg-amber-600 transition-all shadow-lg"
+                  className="p-1 md:p-2 bg-slate-900 text-white rounded-full hover:bg-amber-600 transition-all shadow-lg"
                 >
                   <ArrowRight className="w-4 md:w-5 h-4 md:h-5 rotate-180" />
                 </motion.button>
@@ -212,7 +212,7 @@ const Home = () => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setCurrentSlide((prev) => (prev + 1) % POSTER_CAROUSEL.length)}
-                  className="p-2 md:p-3 bg-slate-900 text-white rounded-full hover:bg-amber-600 transition-all shadow-lg"
+                  className="p-1 md:p-2 bg-slate-900 text-white rounded-full hover:bg-amber-600 transition-all shadow-lg"
                 >
                   <ArrowRight className="w-4 md:w-5 h-4 md:h-5" />
                 </motion.button>
@@ -225,12 +225,12 @@ const Home = () => {
       <section 
         onMouseMove={handleMouseMove} 
         onMouseLeave={handleMouseLeave}
-        className="relative min-h-screen flex items-center bg-white overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-0"
+        className="relative min-h-screen flex items-center bg-white overflow-hidden py-4 md:py-12 lg:py-30"
       >
-        <FloatingTemplates />
+     
 
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-12 relative z-10 py-12 md:py-0">
-          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-12 relative z-10 py-6 md:py-0">
+          <div className="grid lg:grid-cols-2 gap-4 sm:gap-5 md:gap-8 lg:gap-10 items-center">
             
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -238,7 +238,7 @@ const Home = () => {
               transition={{ duration: 0.8, ease: "circOut" }}
             >
               <motion.div 
-                className="inline-flex items-center gap-2.5 md:gap-3 mb-4 sm:mb-6 md:mb-8 lg:mb-10 bg-amber-50 border border-amber-200 px-3 sm:px-4 py-2 md:py-2.5 rounded-full shadow-sm hover:shadow-md transition-shadow"
+                className="inline-flex items-center gap-2.5 md:gap-3 mb-2 sm:mb-3 md:mb-4 lg:mb-6 bg-amber-50 border border-amber-200 px-3 sm:px-4 py-2 md:py-2.5 rounded-full shadow-sm hover:shadow-md transition-shadow"
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 3, repeat: Infinity }}
               >
@@ -247,7 +247,7 @@ const Home = () => {
               </motion.div>
 
               <motion.h1 
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.25] sm:leading-[1.2] md:leading-[1.15] lg:leading-[1.1] mb-6 sm:mb-8 md:mb-10 lg:mb-12"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.25] sm:leading-[1.2] md:leading-[1.15] lg:leading-[1.1] mb-3 sm:mb-4 md:mb-6 lg:mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.8 }}
@@ -258,7 +258,7 @@ const Home = () => {
               </motion.h1>
 
               <motion.p 
-                className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-slate-600 font-medium leading-relaxed sm:leading-7 md:leading-8 lg:leading-9 max-w-2xl mb-6 sm:mb-8 md:mb-10 lg:mb-14 opacity-95"
+                className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-slate-600 font-medium leading-relaxed sm:leading-7 md:leading-8 lg:leading-9 max-w-2xl mb-3 sm:mb-4 md:mb-6 lg:mb-8 opacity-95"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
@@ -268,7 +268,7 @@ const Home = () => {
               </motion.p>
 
               <motion.div 
-                className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 md:gap-5 lg:gap-6"
+                className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.8 }}
@@ -277,15 +277,15 @@ const Home = () => {
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => navigate('/courses')}
-                  className="px-5 sm:px-6 md:px-8 lg:px-10 py-2.5 sm:py-3 md:py-4 lg:py-5 bg-slate-900 text-white font-bold uppercase tracking-wider md:tracking-widest text-xs md:text-sm lg:text-base hover:bg-amber-600 transition-all duration-300 flex items-center justify-center lg:justify-start gap-2 md:gap-3 active:scale-95 shadow-xl hover:shadow-2xl rounded-lg md:rounded-xl w-full sm:w-auto"
+                  className="px-8 py-5 md:py-6 bg-slate-950 hover:bg-amber-600 text-white font-black text-sm md:text-base uppercase tracking-widest rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-3 active:scale-95"
                 >
-                  Explore Courses <ArrowUpRight className="w-3.5 md:w-4 lg:w-5 h-3.5 md:h-4 lg:h-5" />
+                  Explore Courses <ArrowUpRight className="w-5 h-5" />
                 </motion.button>
                 <motion.button 
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => navigate('/register')}
-                  className="px-5 sm:px-6 md:px-8 lg:px-10 py-2.5 sm:py-3 md:py-4 lg:py-5 border-2 border-slate-200 text-slate-900 font-bold uppercase tracking-wider md:tracking-widest text-xs md:text-sm lg:text-base hover:border-slate-900 hover:bg-slate-50 transition-all duration-300 rounded-lg md:rounded-xl w-full sm:w-auto"
+                  className="px-8 py-5 md:py-6 border-2 border-slate-950 hover:bg-slate-950 text-slate-950 hover:text-white font-black text-sm md:text-base uppercase tracking-widest rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
                 >
                   Quick Enrollment
                 </motion.button>
@@ -396,9 +396,9 @@ const Home = () => {
 
       
       {/* --- ABOUT US SECTION --- */}
-      <section className="py-16 sm:py-24 md:py-32 lg:py-40 bg-slate-50 overflow-hidden relative">
+      <section className="py-6 md:py-16 lg:py-40 bg-slate-50 overflow-hidden relative border-t border-slate-200">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-12">
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-20 items-center">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-5 md:gap-8 lg:gap-12 items-center">
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -428,15 +428,15 @@ const Home = () => {
               initial={{ opacity: 0, y: 30 }} 
               whileInView={{ opacity: 1, y: 0 }} 
               viewport={{ once: true }}
-              className="space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10 order-1 md:order-2"
+              className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 order-1 md:order-2"
             >
-              <div className="inline-flex items-center gap-3 sm:gap-4 md:gap-5 mb-3 md:mb-4 lg:mb-6">
+              <div className="inline-flex items-center gap-3 sm:gap-4 md:gap-5 mb-2 md:mb-3 lg:mb-4">
                 <span className="w-10 sm:w-12 md:w-16 lg:w-20 h-1 md:h-1.5 lg:h-2 bg-amber-600 rounded-full"></span>
                 <span className="text-[9px] sm:text-xs md:text-sm font-black uppercase tracking-[0.3em] md:tracking-[0.4em] lg:tracking-[0.5em] text-amber-600 leading-relaxed">Academic Blueprint</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight text-slate-900 leading-snug md:leading-tight lg:leading-snug uppercase mb-4 md:mb-6 lg:mb-8">Bridging <span className="text-amber-600 underline underline-offset-2 sm:underline-offset-3 md:underline-offset-4 lg:underline-offset-6 decoration-amber-600 decoration-2 md:decoration-3 lg:decoration-4">Industry Gaps.</span></h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight text-slate-900 leading-snug md:leading-tight lg:leading-snug uppercase mb-2 sm:mb-3 md:mb-4 lg:mb-5">Bridging <span className="text-amber-600 underline underline-offset-2 sm:underline-offset-3 md:underline-offset-4 lg:underline-offset-6 decoration-amber-600 decoration-2 md:decoration-3 lg:decoration-4">Industry Gaps.</span></h2>
               <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-slate-600 leading-relaxed sm:leading-7 md:leading-8 lg:leading-9 font-normal opacity-95 max-w-3xl">We have been the gold standard for engineering licensure in Qatar. Our methodology focuses on high-yield exam patterns, ensuring our candidates lead the nation's infrastructure development.</p>
-              <div className="grid sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6 lg:gap-8 mt-6 md:mt-8 lg:mt-10">
+              <div className="grid sm:grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:gap-6 mt-4 md:mt-6 lg:mt-8">
                 {[ { icon: Target, title: "Our Mission", desc: "Empowering engineers through technical excellence." }, { icon: Zap, title: "Industry Experts", desc: "Trainers with 15+ years of Middle East experience." } ].map((box, i) => (
                   <motion.div 
                     key={i} 
@@ -460,9 +460,9 @@ const Home = () => {
       </section>
 
       {/* --- COURSE GRID SECTION --- */}
-      <section className="py-16 sm:py-24 md:py-32 lg:py-40 bg-white">
+      <section className="py-6 md:py-16 lg:py-40 bg-white border-t border-slate-200">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-12">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 sm:mb-16 md:mb-20 lg:mb-28 gap-6 sm:gap-8 md:gap-12 lg:gap-16 border-b-2 border-slate-200 pb-8 sm:pb-12 md:pb-16 lg:pb-20">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 sm:mb-10 md:mb-14 lg:mb-18 gap-4 sm:gap-6 md:gap-8 lg:gap-10 border-b-2 border-slate-200 pb-6 sm:pb-8 md:pb-12 lg:pb-16">
             <div className="max-w-3xl flex-1">
               <h2 className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-black text-amber-600 uppercase tracking-[0.3em] md:tracking-[0.4em] lg:tracking-[0.5em] mb-3 md:mb-4 lg:mb-6 leading-relaxed">The Catalog</h2>
               <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight text-slate-900 uppercase leading-snug lg:leading-snug">Professional Specializations</h3>
@@ -475,7 +475,7 @@ const Home = () => {
               View All <ChevronRight className="w-4 md:w-5 h-4 md:h-5 group-hover:translate-x-1 transition-transform" />
             </motion.button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
             {COURSES_DATA.map((course, idx) => (
               <motion.div 
                 key={course.id} 
@@ -496,29 +496,20 @@ const Home = () => {
       </section>
 
       {/* --- OTHER PROGRAMS SECTION --- */}
-      <section className="py-16 sm:py-24 md:py-32 lg:py-40 bg-slate-900 text-white overflow-hidden relative">
+      <section className="py-6 md:py-16 lg:py-40 bg-slate-900 text-white overflow-hidden relative border-t border-slate-200">
         <motion.div className="absolute inset-0 opacity-5">
-          <motion.div 
-            animate={{ scale: [1, 1.2, 1] }}
-            transition={{ duration: 20, repeat: Infinity }}
-            className="absolute w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-amber-500 rounded-full filter blur-3xl -top-32 sm:-top-40 -left-32 sm:-left-40" 
-          />
-          <motion.div 
-            animate={{ scale: [1.2, 1, 1.2] }}
-            transition={{ duration: 20, repeat: Infinity, delay: 1 }}
-            className="absolute w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-amber-500 rounded-full filter blur-3xl -bottom-32 sm:-bottom-40 -right-32 sm:-right-40" 
-          />
+          <img src="https://www.expedia.com/Qatar.dx149" alt="abstract" className="w-full h-full object-cover" />
         </motion.div>
         
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-12 relative z-10">
-          <div className="text-center mb-12 sm:mb-16 md:mb-24 lg:mb-32">
+          <div className="text-center mb-8 sm:mb-10 md:mb-16 lg:mb-20">
             <h2 className="text-[9px] sm:text-xs font-black text-amber-400 uppercase tracking-[0.3em] md:tracking-[0.4em] mb-3 md:mb-5 lg:mb-8 leading-relaxed">More Offerings</h2>
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight uppercase leading-snug lg:leading-snug">
               Additional <span className="text-amber-400">Learning Paths</span>
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
             {OTHER_PROGRAMS.map((program, idx) => (
               <motion.div 
                 key={idx}
@@ -529,15 +520,15 @@ const Home = () => {
                 viewport={{ once: true }}
                 className="group p-5 sm:p-6 md:p-7 lg:p-8 bg-slate-800/50 backdrop-blur border border-amber-500/20 rounded-xl sm:rounded-2xl md:rounded-3xl hover:border-amber-500/50 hover:bg-slate-700/60 transition-all duration-300"
               >
-                <motion.div 
-                  whileHover={{ rotate: 10, scale: 1.1 }}
-                  className="w-11 sm:w-12 md:w-14 lg:w-16 h-11 sm:h-12 md:h-14 lg:h-16 bg-amber-500/10 border border-amber-500/30 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-5 lg:mb-6 group-hover:bg-amber-500/20 transition-all"
-                >
+              <motion.div 
+                whileHover={{ rotate: 10, scale: 1.1 }}
+                className="w-11 sm:w-12 md:w-14 lg:w-16 h-11 sm:h-12 md:h-14 lg:h-16 bg-amber-500/10 border border-amber-500/30 rounded-xl md:rounded-2xl flex items-center justify-center mb-2 md:mb-3 lg:mb-4 group-hover:bg-amber-500/20 transition-all"
+              >
                   <program.icon className="w-5 sm:w-6 md:w-7 lg:w-8 h-5 sm:h-6 md:h-7 lg:h-8 text-amber-400" />
                 </motion.div>
-                <h4 className="font-bold text-sm md:text-base lg:text-lg uppercase tracking-wide mb-2 md:mb-3 lg:mb-4 text-white leading-snug">{program.title}</h4>
+                <h4 className="font-bold text-sm md:text-base lg:text-lg uppercase tracking-wide mb-1 md:mb-2 lg:mb-3 text-white leading-snug">{program.title}</h4>
                 <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-slate-300 leading-relaxed md:leading-7 font-normal">{program.desc}</p>
-                <motion.div className="mt-4 md:mt-5 lg:mt-6 flex items-center gap-1.5 text-amber-400 font-bold text-[9px] md:text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">
+                <motion.div className="mt-2 md:mt-3 lg:mt-4 flex items-center gap-1.5 text-amber-400 font-bold text-[9px] md:text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">
                   Learn More <ArrowRight className="w-3.5 md:w-4 h-3.5 md:h-4" />
                 </motion.div>
               </motion.div>
@@ -547,16 +538,16 @@ const Home = () => {
       </section>
 
       {/* --- FAQ SECTION --- */}
-      <section className="py-16 sm:py-20 md:py-28 lg:py-36 bg-white">
+      <section className="py-6 md:py-16 lg:py-40 bg-white border-t border-slate-200">
         <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-12 max-w-5xl">
-          <div className="text-center mb-10 sm:mb-12 md:mb-16 lg:mb-24 space-y-2.5 md:space-y-3 lg:space-y-4">
+          <div className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16 space-y-1.5 md:space-y-2 lg:space-y-3">
               <motion.div initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} className="flex justify-center">
                 <HelpCircle className="w-10 sm:w-12 md:w-16 lg:w-20 h-10 sm:h-12 md:h-16 lg:h-20 text-amber-600 mb-4 md:mb-6 lg:mb-8" strokeWidth={1} />
               </motion.div>
               <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold text-slate-900 tracking-tight uppercase leading-snug lg:leading-[1.15]">Curriculum <span className="text-amber-600">Support.</span></h3>
               <p className="text-slate-500 font-bold uppercase tracking-[0.25em] md:tracking-[0.3em] lg:tracking-[0.4em] text-[8px] sm:text-[9px] md:text-xs lg:text-sm leading-normal">Answers to your professional technical queries</p>
           </div>
-          <div className="grid gap-3 md:gap-4 lg:gap-6">
+          <div className="grid gap-2 md:gap-3 lg:gap-4">
             {FAQ_DATA.map((faq, idx) => (
               <motion.div 
                 key={idx} 
